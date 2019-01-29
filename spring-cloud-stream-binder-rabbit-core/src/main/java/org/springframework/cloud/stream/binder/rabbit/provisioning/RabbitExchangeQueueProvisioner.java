@@ -308,7 +308,7 @@ public class RabbitExchangeQueueProvisioner implements ApplicationListener<Decla
 							.build());
 			}
 			Binding dlqBinding = new Binding(dlq.getName(), DestinationType.QUEUE, dlxName,
-					properties.getDlqDeadLetterRoutingKey() == null ? routingKey : properties.getDeadLetterRoutingKey(),
+					properties.getDeadLetterRoutingKey() == null ? routingKey : properties.getDeadLetterRoutingKey(),
 					null);
 			declareBinding(dlqName, dlqBinding);
 			if (properties instanceof RabbitConsumerProperties &&
